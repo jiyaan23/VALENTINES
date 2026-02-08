@@ -1,0 +1,233 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>for my wifeyy</title>
+
+<img src="https://scontent.cdninstagram.com/v/t1.15752-9/625529325_1369588774972723_4845042859747801336_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=104&ccb=7-5&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOnRlc3QiXX0%3D&_nc_ohc=UZQg5dUfWUIQ7kNvwFPdpCJ&_nc_oc=AdkLe61-Es-gj8mc-t09HlO4Mnm1nlW3Ydp7G85zVtvxUlJutDFXWeJgdUuoWhQOsSPUDG3UVbTFfdzWXLylyiu9&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&oh=03_Q7cD4gG-E1cPaGoaa5WFbk5DjxzZ11sJEOviKw02EHbja-yVRA&oe=69AF5A8B" alt="cute" width="20" height= "20">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0b1d3a, #020814);
+    font-family: 'Segoe UI', sans-serif;
+    color: #b9ecff;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(140,210,255,0.7);
+  }
+
+  .scene {
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .garden {
+    display: flex;
+    gap: 140px;
+  }
+
+  .rose {
+    position: relative;
+    width: 140px;
+    height: 320px;
+    transform-style: preserve-3d;
+  }
+
+  .bloom {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    transform: scale(0);
+    transform-style: preserve-3d;
+  }
+
+  .petal {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: radial-gradient(circle at 30% 30%, #4fa3ff, #1556b8);
+    border-radius: 50%;
+  }
+
+  .petal:nth-child(1) { transform: translateZ(20px) translateX(12px); }
+  .petal:nth-child(2) { transform: translateZ(10px) translateY(18px); }
+  .petal:nth-child(3) { transform: translateZ(0) translateX(24px) translateY(18px); }
+  .petal:nth-child(4) { transform: translateZ(-10px) translateX(12px) translateY(36px); }
+
+  .center {
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle, #b9ecff, #2a7cff);
+    border-radius: 50%;
+    transform: translateZ(30px);
+    box-shadow: 0 0 18px rgba(140,210,255,0.8);
+  }
+
+  .stem {
+    position: absolute;
+    top: 90px;
+    left: 67px;
+    width: 6px;
+    height: 190px;
+    background: linear-gradient(#2f8f5f, #145a32);
+    border-radius: 3px;
+    transform: translateZ(-20px);
+  }
+
+  .leaf {
+    position: absolute;
+    width: 42px;
+    height: 18px;
+    background: radial-gradient(circle at top, #5edc9b, #2f8f5f);
+    border-radius: 50%;
+  }
+
+  .leaf.left {
+    top: 150px;
+    left: 25px;
+    transform: rotateY(-30deg);
+  }
+
+  .leaf.right {
+    top: 175px;
+    left: 65px;
+    transform: rotateY(30deg);
+  }
+
+  .falling-image {
+    position: fixed;
+    top: 0;
+    width: 30px;  
+    height: 30px;  
+    pointer-events: none;
+    opacity: 0.9;
+    animation: fall-spin linear forwards;
+  }
+
+  @keyframes fall-spin {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>momoi baho</h1>
+
+<div class="scene">
+  <div class="garden">
+
+    <div class="rose">
+      <div class="bloom">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+
+    <div class="rose">
+      <div class="bloom">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+
+    <div class="rose">
+      <div class="bloom">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+      </div>
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const roses = document.querySelectorAll('.rose');
+
+roses.forEach((rose, index) => {
+  const bloom = rose.querySelector('.bloom');
+  setTimeout(() => {
+    bloom.style.transition = 'transform 2.5s ease-out';
+    bloom.style.transform = 'scale(1)';
+  }, index * 1200);
+});
+
+function createFalling(x = null, y = null) {
+  const img = document.createElement('img');
+  img.src = "https://i.postimg.cc/1XjvQk3h/Untitled-design-removebg-preview.png"; 
+  img.classList.add('falling-image');
+
+  img.style.left = x !== null ? `${x}px` : `${Math.random() * window.innerWidth}px`;
+  img.style.top = y !== null ? `${y}px` : `-50px`;
+
+  const size = 20 + Math.random() * 20; 
+  img.style.width = `${size}px`;
+  img.style.height = `${size}px`;
+
+  img.style.animationDuration = 3 + Math.random() * 2 + 's';
+  img.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+  document.body.appendChild(img);
+
+  setTimeout(() => img.remove(), 5000);
+}
+
+const imageInterval = setInterval(createFalling, 200);
+
+setTimeout(() => clearInterval(imageInterval), roses.length * 1200 + 3000);
+
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  roses.forEach(rose => {
+    rose.style.transform = `rotateY(${x}deg)`;
+  });
+});
+
+document.addEventListener('click', (e) => {
+  for (let i = 0; i < 3; i++) {
+    createFalling(e.clientX + (Math.random() * 40 - 20), e.clientY + (Math.random() * 40 - 20));
+  }
+});
+
+document.addEventListener('touchstart', (e) => {
+  for (let i = 0; i < 5; i++) {
+    const touch = e.touches[0];
+    createFalling(touch.clientX + (Math.random() * 40 - 20), touch.clientY + (Math.random() * 40 - 20));
+  }
+});
+</script>
+
+</body>
+</html>
